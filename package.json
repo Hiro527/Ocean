@@ -1,0 +1,28 @@
+{
+    "name": "ocean",
+    "version": "1.0.0",
+    "description": "SNS",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "wrangler deploy",
+        "dev": "wrangler dev",
+        "start": "wrangler dev",
+        "tsc": "tsc",
+        "format": "prettier -w ."
+    },
+    "author": "Hiro527",
+    "license": "MIT",
+    "dependencies": {
+        "hono": "^4.0.3",
+        "uuid": "^9.0.1",
+        "workers-qb": "^1.1.1"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20240208.0",
+        "@types/node": "^20.11.19",
+        "@types/uuid": "^9.0.8",
+        "prettier": "^3.2.5",
+        "typescript": "^5.3.3",
+        "wrangler": "^3.28.2"
+    }
+}

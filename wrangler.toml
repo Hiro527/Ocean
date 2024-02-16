@@ -1,0 +1,38 @@
+name = "ocean-api"
+main = "src/main.ts"
+compatibility_date = "2023-10-16"
+
+compatibility_flags = [ "nodejs_compat" ]
+
+# local
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ocean-api-local"
+database_id = "dummy"
+
+# dev
+
+[env.dev]
+logpush = true
+
+[env.dev.vars]
+ENV = "dev"
+
+[[env.dev.d1_databases]]
+binding = "DB"
+database_name = "ocean-api-dev"
+database_id = "b34d79bb-7ff8-4add-a1a9-881f5b1b6a32"
+
+# prod
+
+[env.prod]
+logpush = true
+
+[env.prod.vars]
+ENV = "prod"
+
+[[env.prod.d1_databases]]
+binding = "DB"
+database_name = "ocean-api-prod"
+database_id = "16b46010-3c3d-461f-a647-7f7e763ef620"
