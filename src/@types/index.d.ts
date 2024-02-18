@@ -1,7 +1,8 @@
 type Env = {
     DB: D1Database;
     ENV: 'dev' | 'prod';
-    DOMAIN: string;
+    API_HOST: string;
+    WEB_HOST: string;
 };
 
 type ContextArgs = {

@@ -1,6 +1,6 @@
 type Token = {
     token: string;
-    user_uuid: string;
+    uid: string;
     expire_date: number;
     created_at: string;
 };
