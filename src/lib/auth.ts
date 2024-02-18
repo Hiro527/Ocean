@@ -68,7 +68,7 @@ export const createNewSession = async (c: Context<ContextArgs>, user: User) => {
 
 export const authUserByToken = async (c: Context<ContextArgs>) => {
     const qb = new D1QB(c.env.DB);
-    const token = getCookie(c, 'board_token');
+    const token = getCookie(c, 'token');
 
     if (!token) {
         return [
