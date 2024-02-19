@@ -1,8 +1,9 @@
 import { Context } from 'hono';
 import { D1QB } from 'workers-qb';
 import { getCookie } from 'hono/cookie';
-import { TOKEN_LENGTH } from './consts';
 import { v4 } from 'uuid';
+
+import { TOKEN_LENGTH } from './consts';
 
 export const generateSaltHash = async (str: string) => {
     const saltArray = new Uint8Array(16);
