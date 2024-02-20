@@ -1,5 +1,8 @@
-import { Hono } from 'hono';
+import { Context, Hono, MiddlewareHandler } from 'hono';
+import { getCookie } from 'hono/cookie';
 import { cors } from 'hono/cors';
+import { D1QB } from 'workers-qb';
+import { challangeToken } from './lib/auth';
 
 const app = new Hono<ContextArgs>();
 

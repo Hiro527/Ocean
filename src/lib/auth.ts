@@ -31,7 +31,7 @@ export const challangePassword = async (password: string, salt: string, hash: st
     return hashHex === hash;
 };
 
-export const createNewSession = async (c: Context<ContextArgs>, user: User) => {
+export const createNewSession = async (c: Context<ContextArgs>, auth: Auth) => {
     const qb = new D1QB(c.env.DB);
 
     const arr = new Uint8Array(32);
@@ -43,7 +43,7 @@ export const createNewSession = async (c: Context<ContextArgs>, user: User) => {
             tableName: 'tokens',
             data: {
                 token: token,
-                user_uuid: user.uid,
+                user_uuid: auth.uid,
                 expire_date: expire_date,
             },
         })
@@ -135,6 +135,6 @@ export const challangeToken = async (qb: D1QB, tokenToChallange: string) => {
         })
         .execute();
 
-    const user = fetchedUser.results as Auth;
+    const user = fetchedUser.results as User;
     return user;
 };
