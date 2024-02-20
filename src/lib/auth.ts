@@ -72,27 +72,13 @@ export const authUserByToken = async (c: Context<ContextArgs>) => {
     const token = getCookie(c, 'token');
 
     if (!token) {
-        return [
-            {
-                error: {
-                    message: 'Login required',
-                },
-            },
-            401,
-        ];
+        return false;
     }
 
     const user = await challangeToken(qb, token);
 
     if (!user) {
-        return [
-            {
-                error: {
-                    message: 'Token invalid or expired',
-                },
-            },
-            401,
-        ];
+        return false;
     }
 
     return user;

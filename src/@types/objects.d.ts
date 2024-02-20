@@ -36,7 +36,7 @@ type Post = {
     id: string;
     uid: string;
     body: string | null;
-    post_type: string;
+    post_type: 'post' | 'like' | 'repost' | 'reply';
     base_post_id: string | null;
     deleted: 0 | 1;
     created_at: string;
@@ -49,8 +49,8 @@ type ExtendedPost = {
     post_type: 'post' | 'like' | 'repost' | 'reply';
     base_post_id: string | null;
     base_post: ExtendedPost | null;
-    likes: ExtendedPost[];
-    reposts: ExtendedPost[];
+    likes: Post[];
+    reposts: Post[];
     replies: ExtendedPost[];
     created_at: string;
 };
