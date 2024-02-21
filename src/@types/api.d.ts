@@ -20,3 +20,5 @@ type createPostBody = {
     body: string;
     attachments: string[];
 };
+
+type searchTypeString = 'user' | 'post';
